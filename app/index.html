@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-route.js"></script>
+		<script src="js/AdsApp.js"></script>
+		<script src="js/controllers/MainController.js"></script>
 	</head>
-	<body>
-		
+	<body ng-app="MainModule" ng-controller="MainController">
+
+	<div class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="../" class="navbar-brand">Ads World</a>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar-main">
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#/login" target="_blank">Login</a></li>
+					<li><a href="#/register" target="_blank">Register</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div ng-view="" class="container">
+	</div>
 	</body>
 </html>
