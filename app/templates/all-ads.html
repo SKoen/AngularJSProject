@@ -1,0 +1,49 @@
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-9">
+            <ul id="adsList">
+                <li ng-repeat="ad in data.ads">
+                    <div class="container well">
+                        <h3 class="pull-left">
+                            {{ad.title}}
+                        </h3>
+                        <span class="pull-right">
+                            {{ad.date|date:"d-MMM-yyyy"}}
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="adImg" src="img/no-img.png" ng-src={{ad.imageDataUrl}}>
+                        </div>
+                        <div class="col-md-8">
+                            {{ad.text}}
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h5><strong>Name</strong></h5>
+                                    <h5> <strong>Email</strong></h5>
+                                    <h5> <strong>Tel.</strong></h5>
+                                </div>
+                                <div class="col-md-10">
+                                    <h5>{{ad.ownerName}}</h5>
+                                    <h5>{{ad.ownerEmail}}</h5>
+                                    <h5>{{ad.ownerPhone}}</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Towns</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
