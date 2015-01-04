@@ -1,9 +1,9 @@
-<div class="jumbotron">
+<div class="">
     <div class="row">
         <div class="col-md-9">
             <ul id="adsList">
-                <li ng-repeat="ad in adsData.ads">
-                    <div class="container">
+                <li ng-repeat="ad in adsData.ads" class="jumbotron">
+                    <div class="jumbotron">
                         <h3 class="pull-left">
                             {{ad.title}}
                         </h3>
@@ -35,18 +35,15 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-3">
-            <div class="btn-group">
-                <a href="#" class="btn btn-default">Default</a>
-                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
-            </div>
+        <div class="btn-group col-md-3">
+            <a href="#" class="btn btn-default">Default</a>
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
         </div>
     </div>
 </div>
