@@ -1,0 +1,64 @@
+<form class="form-horizontal">
+    <fieldset class="col-md-5">
+        <legend>Edit Profile</legend>
+        <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputName" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Em@il">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTown" class="col-lg-2 control-label">Town</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="inputTown">
+                    <option ng-repeat="town in townsData">{{town.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-3">
+                <button type="submit" class="btn btn-success col-lg-offset-1">Update</button>
+                <button class="btn btn-danger col-lg-offset-1">Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="col-md-7">
+        <legend>Change password</legend>
+        <div class="form-group">
+            <label for="oldPassword" class="col-lg-3 control-label">Old Password</label>
+            <div class="col-lg-9">
+                <input type="password" class="form-control" id="oldPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="newPassword" class="col-lg-3 control-label">New password</label>
+            <div class="col-lg-9">
+                <input type="password" class="form-control" id="newPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ConfirmPassword" class="col-lg-3 control-label">Confirm new password</label>
+            <div class="col-lg-9">
+                <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-3">
+                <button type="submit" class="btn btn-success  col-lg-offset-1">Change Password</button>
+                <button class="btn btn-danger  col-lg-offset-4">Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

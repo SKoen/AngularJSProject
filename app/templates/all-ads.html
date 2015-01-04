@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-9">
             <ul id="adsList">
-                <li ng-repeat="ad in data.ads">
-                    <div class="container well">
+                <li ng-repeat="ad in adsData.ads">
+                    <div class="container">
                         <h3 class="pull-left">
                             {{ad.title}}
                         </h3>
@@ -36,13 +36,16 @@
             </ul>
         </div>
         <div class="col-md-3">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Towns</h3>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-default">Default</a>
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
             </div>
         </div>
     </div>
