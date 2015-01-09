@@ -1,8 +1,8 @@
-var mainApp=angular.module('MainModule',['ngRoute']);
+var mainApp=angular.module('MainModule',['ngRoute','ngResource','LocalStorageModule']);
 
 mainApp.constant('mainUrl',"http://softuni-ads.azurewebsites.net/api/");
 
-mainApp.config(function($routeProvider){
+mainApp.config(['$routeProvider',function($routeProvider){
     $routeProvider.when('/register',{
         templateUrl:"templates/register.html",
         controller : 'RegisterCtrl'
@@ -12,7 +12,9 @@ mainApp.config(function($routeProvider){
         controller:'HomeController'
     })
     $routeProvider.when('/login',{
-        templateUrl:"templates/login.html"
+        templateUrl:"templates/login.html",
+        controller:'LoginCtrl'
+
     })
     $routeProvider.otherwise({redirectTo:'/ads'});
-})
+}])
