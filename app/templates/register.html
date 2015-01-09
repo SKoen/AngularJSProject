@@ -1,17 +1,16 @@
-
-    <form class="form-horizontal">
+<form class="form-horizontal" >
         <legend>Register</legend>
         <fieldset>
             <div class="form-group">
                 <label for="inputUserName" class="col-lg-2 control-label">User Name</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputUserName" placeholder="Username">
+                    <input type="text" class="form-control" id="inputUserName" placeholder="Username" ng-model="user.username">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                 <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password">
                 </div>
             </div>
             <div class="form-group">
@@ -23,35 +22,35 @@
             <div class="form-group">
                 <label for="inputName" class="col-lg-2 control-label">Name</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputName" placeholder="Name">
+                    <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="user.name">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Em@il">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Em@il" ng-model="user.email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+                    <input type="text" class="form-control" id="inputPhone" placeholder="Phone" ng-model="user.phone">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputTown" class="col-lg-2 control-label">Town</label>
                 <div class="col-lg-10">
-                    <select class="form-control" id="inputTown">
-                        <option ng-repeat="town in townsData">{{town.name}}</option>
+                    <select class="form-control" id="inputTown" ng-model="user.townId">
+                        <option ng-repeat="town in townsData" value={{town.id}} >{{town.name}}</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-3">
-                    <button type="submit" class="btn btn-success btn-lg">Register</button>
+                    <button type="submit" class="btn btn-success btn-lg" ng-click="register(user)">Register</button>
                     <button class="btn btn-danger col-lg-offset-7 btn-lg">Cancel</button>
                 </div>
             </div>
 
         </fieldset>
-    </form>
+</form>

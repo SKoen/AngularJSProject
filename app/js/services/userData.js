@@ -1,0 +1,1 @@
+mainApp.factory('userData',['$resource',])

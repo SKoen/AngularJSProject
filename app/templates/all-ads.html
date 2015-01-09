@@ -35,15 +35,14 @@
                 </li>
             </ul>
         </div>
-        <div class="btn-group col-md-3">
-            <a href="#" class="btn btn-default">Default</a>
-            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
+        <div class="btn-group-vertical" >
+            <span>Filter by categories:</span>
+            <button href="#" class="btn btn-default" ng-click="hideCategories=false">All</button>
+            <a href="#/ads" ng-hide=hideCategories ng-repeat="category in categoryData" class="btn btn-default"  ng-click=clickCategory(category.id)>{{category.name}}</a>
+            <br>
+            <span>Filter by towns:</span>
+            <button href="#" class="btn btn-default" ng-click="hideTowns=false">All</button>
+            <a href="#/ads" ng-hide=hideTowns ng-repeat="town in townsData" class="btn btn-default"  ng-click="clickTown(town.id)">{{town.name}}</a>
         </div>
     </div>
 </div>

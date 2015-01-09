@@ -1,8 +1,8 @@
-var mainUrl="http://softuni-ads.azurewebsites.net/api/";
-
-mainApp.factory('mainData',function($http){
+mainApp.factory('mainData',['mainUrl','$http',function(mainUrl,$http){
     return {
         getAllAds:function(success){
+           // categoryId==null?"CategoryId"+categoryId:"";
+            //townId==null?"townId"+townId:"";
             $http({method:'GET',url:mainUrl+'ads?Pagesize=10&startpage=1'})
                 .success(function(data,status,headers,config){
                     success(data);
@@ -30,4 +30,4 @@ mainApp.factory('mainData',function($http){
                 })
         }
     }
-})
+}])
