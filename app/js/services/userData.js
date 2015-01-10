@@ -17,12 +17,8 @@ mainApp.factory('userData',['mainUrl','$resource','authentication',function(main
             })
         return resource
     }
-    function logoutUser(){
-        localStorage.clear();
-    }
     return {
         register:registerUser,
-        login:loginUser,
-        logout:logoutUser
+        login:loginUser
     }
 }])
