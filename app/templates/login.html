@@ -5,18 +5,18 @@
             <div class="form-group">
                 <label for="inputUserName" class="col-lg-2 control-label">User Name</label>
                 <div class="col-lg-4">
-                    <input type="text" class="form-control" id="inputUserName" placeholder="Username">
+                    <input type="text" class="form-control" id="inputUserName" placeholder="Username" ng-model="user.userName">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                 <div class="col-lg-4">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-5 col-lg-offset-2">
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="submit" class="btn btn-success" ng-click="login(user)">Login</button>
                     <button class="btn btn-danger">Cancel</button>
                     <a href="#/register" class="btn btn-link" style="color:blue;font-weight: bold; font-style: italic">Register here</a>
                 </div>

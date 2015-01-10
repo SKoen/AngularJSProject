@@ -11,33 +11,41 @@
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular/angular-route.js"></script>
 	<script src="lib/angular/angular-resource.js"></script>
-	<script src="lib/angular/angular-local-storage.js"></script>
+	<script src="lib/angular/angular-local-storage/dist/angular-local-storage.js"></script>
 	<script src="js/AdsApp.js"></script>
-	<script src="js/controllers/homeController.js"></script>
-	<script src="js/controllers/registerController.js"></script>
-	<script src="js/controllers/loginController.js"></script>
-	<script src="js/services/mainPage.js"></script>
 	<script src="js/services/townsData.js"></script>
 	<script src="js/services/categoryData.js"></script>
 	<script src="js/services/adsData.js"></script>
 	<script src="js/services/userData.js"></script>
+	<script src="js/controllers/homeController.js"></script>
+	<script src="js/controllers/registerController.js"></script>
+	<script src="js/controllers/loginController.js"></script>
+	<script src="js/controllers/headerController.js"></script>
+	<script src="js/services/mainPage.js"></script>
 	<script src="js/services/authentication.js"></script>
 	<body ng-app="MainModule">
 
-	<div class="navbar navbar-default">
+	<div class="navbar navbar-default" ng-controller="HeaderCtrl">
 		<div class="container">
 			<div class="navbar-header">
 				<a href="../" class="navbar-brand">Ads World</a>
 			</div>
+			<ul class="nav navbar-nav" ng-show="isLoggedIn">
+				<li><a href="#/user/ads">My Ads</a></li>
+				<li><a href="#/user/ads/publish">Publish New Ad</a></li>
+				<li><a href="#/user/editProfile">Edit Profile</a></li>
+			</ul>
 			<div class="navbar-collapse collapse" id="navbar-main">
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#/login">Login</a></li>
-					<li><a href="#/register">Register</a></li>
+					<li ng-hide="isLoggedIn"><a href="#/login">Login</a></li>
+					<li ng-hide="isLoggedIn"><a href="#/register">Register</a></li>
+					<li ng-show="isLoggedIn"><a href="#/logout">Logout</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
+
 	<div ng-view class="container">
 	</div>
 	</body>

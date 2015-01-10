@@ -16,5 +16,17 @@ mainApp.config(['$routeProvider',function($routeProvider){
         controller:'LoginCtrl'
 
     })
+    $routeProvider.when('/user/ads',{
+        templateUrl:"templates/loggin.html"
+    })
+    $routeProvider.when('/user/ads/publish',{
+        templateUrl:"templates/publishAd.html"
+    })
+    $routeProvider.when('/user/editProfile',{
+        templateUrl:"templates/editProfile.html"
+    })
+    $routeProvider.when('/logout',{
+        controller:'LogoutCtrl'
+    })
     $routeProvider.otherwise({redirectTo:'/ads'});
 }])

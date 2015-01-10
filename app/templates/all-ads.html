@@ -1,6 +1,8 @@
-<div class="">
-    <div class="row">
+<div class="row">
         <div class="col-md-9">
+            <div class="progress progress-striped active" ng-hide="ready">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
             <ul id="adsList">
                 <li ng-repeat="ad in adsData.ads" class="jumbotron">
                     <div class="jumbotron">
@@ -35,7 +37,7 @@
                 </li>
             </ul>
         </div>
-        <div class="btn-group-vertical" >
+        <div class="btn-group-vertical col-md-3" >
             <span>Filter by categories:</span>
             <button href="#" class="btn btn-default" ng-click="hideCategories=false">All</button>
             <a href="#/ads" ng-hide=hideCategories ng-repeat="category in categoryData" class="btn btn-default"  ng-click=clickCategory(category.id)>{{category.name}}</a>
@@ -45,4 +47,3 @@
             <a href="#/ads" ng-hide=hideTowns ng-repeat="town in townsData" class="btn btn-default"  ng-click="clickTown(town.id)">{{town.name}}</a>
         </div>
     </div>
-</div>

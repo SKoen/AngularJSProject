@@ -1,14 +1,24 @@
-mainApp.factory('authentication',['localStorageServiceProvider',function(localStorageServiceProvider){
+mainApp.factory('authentication',function(){
     var key='user';
     function saveUser(data){
-        localStorageServiceProvider.set(key,data);
+        localStorage.setItem(key,angular.toJson(data));
+
     }
     function getUser(data){
-        localStorageServiceProvider.get(key);
+       return angular.fromJson(localStorage.getItem(key));
     }
 
+    function getHeaders(){
+        var headers={};
+        var userData=getUser();
+        if(userData){
+            headers.Authorization='Bearer '+ userData.access_token;
+        }
+        return headers;
+    }
     return{
         saveUser:saveUser,
-        getUser:getUser
+        getUser:getUser,
+        getHeaders:getHeaders
     }
-}])
+})
