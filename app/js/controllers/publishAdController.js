@@ -1,4 +1,4 @@
-mainApp.controller("publishAdCtrl",['townData','$scope','categoryData','adsData',function(townData,$scope,categoryData,adsData){
+mainApp.controller("publishAdCtrl",['townData','$scope','$location','categoryData','adsData',function(townData,$scope,$location,categoryData,adsData){
         townData.getAllTowns(function(resp){
             $scope.townsData=resp;
         }),
@@ -7,5 +7,8 @@ mainApp.controller("publishAdCtrl",['townData','$scope','categoryData','adsData'
         }),
         $scope.publishAd=function(ad){
             adsData.createNewAd(ad);
+        }
+        $scope.cancel=function(){
+            $location.path('/');
         }
 }])

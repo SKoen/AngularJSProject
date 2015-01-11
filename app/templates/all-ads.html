@@ -1,6 +1,6 @@
 <ng-include src="'templates/header.html'"></ng-include>
 <div class="row container">
-        <div class="col-md-9">
+    <div class="col-md-9">
             <div class="progress progress-striped active" ng-hide="ready">
                 <div class="progress-bar" style="width: 100%;"></div>
             </div>
@@ -40,11 +40,11 @@
         </div>
         <div class="btn-group-vertical col-md-3" >
             <span>Filter by categories:</span>
-            <button href="#" class="btn btn-default" ng-click="hideCategories=false">All</button>
+            <button href="#" class="btn btn-default" ng-click="hideCategories=!hideCategories">All</button>
             <a href="#/ads" ng-hide=hideCategories ng-repeat="category in categoryData" class="btn btn-default"  ng-click=clickCategory(category.id)>{{category.name}}</a>
             <br>
             <span>Filter by towns:</span>
-            <button href="#" class="btn btn-default" ng-click="hideTowns=false">All</button>
+            <button href="#" class="btn btn-default" ng-click="hideTowns=!hideTowns">All</button>
             <a href="#/ads" ng-hide=hideTowns ng-repeat="town in townsData" class="btn btn-default"  ng-click="clickTown(town.id)">{{town.name}}</a>
         </div>
     <ul class="pagination"  ng-show="ready">

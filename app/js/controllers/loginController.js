@@ -4,8 +4,25 @@ mainApp.controller("LoginCtrl",['$scope','$location','userData',function($scope,
             userData.login(user)
                 .$promise
                 .then(function(data){
+                   showInfoMessage("Welcome "+data.username)
                     $location.path('/');
                 })
-        }
+            }
+    function showInfoMessage(msg) {
+        noty({
+                text: msg,
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 3000}
+        );
+    }
 
+    function showErrorMessage(msg) {
+        noty({
+                text: msg,
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 3000}
+        );
+    }
 }])
