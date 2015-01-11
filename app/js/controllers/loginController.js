@@ -6,6 +6,8 @@ mainApp.controller("LoginCtrl",['$scope','$location','userData',function($scope,
                 .then(function(data){
                    showInfoMessage("Welcome "+data.username)
                     $location.path('/');
+                },function(error){
+                    //showErrorMessage(error)
                 })
             }
     function showInfoMessage(msg) {

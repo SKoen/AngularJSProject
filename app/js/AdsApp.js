@@ -24,6 +24,10 @@ mainApp.config(['$routeProvider',function($routeProvider){
         templateUrl:"templates/editProfile.html",
         controller:'editProfileCtrl'
     })
+    $routeProvider.when('/user/ads',{
+        templateUrl:"templates/adEdit.html",
+        controller:'editProfileCtrl'
+    })
     $routeProvider.when('/logout',{
         controller:'LogoutCtrl'
     })

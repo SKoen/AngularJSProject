@@ -13,11 +13,30 @@ mainApp.factory('userData',['mainUrl','$resource','authentication',function(main
             resource.$promise
             .then(function(data){
                 authentication.saveUser(data);
+            },function(error){
+                showErrorMessage(error);
             })
         return resource
     }
     return {
         register:registerUser,
         login:loginUser
+    }
+    function showInfoMessage(msg) {
+        noty({
+                text: msg,
+                type: 'success',
+                layout: 'topCenter',
+                timeout: 3000}
+        );
+    }
+
+    function showErrorMessage(msg) {
+        noty({
+                text: msg,
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 3000}
+        );
     }
 }])

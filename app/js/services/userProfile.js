@@ -7,26 +7,24 @@ mainApp.factory('userProfile',['$http','mainUrl','authentication',function($http
                 success(data);
             })
             .error(function (data, status, headers, config) {
-                $log.warn(data);
             })
     },
     editUserData:function(data) {
         $http({method: 'PUT', url: mainUrl + 'user/profile', headers: headers,data:data})
             .success(function (data, status, headers, config) {
-                console.log(data);
+
             })
             .error(function (data, status, headers, config) {
-                $log.warn(data);
             })
     },
     changePass:function(data) {
         $http({method: 'PUT', url: mainUrl + 'user/changepassword', headers: headers,data:data})
             .success(function (data, status, headers, config) {
-                console.log(data);
+
             })
             .error(function (data, status, headers, config) {
-                $log.warn(data);
             })
     }
+
 }
 }])
