@@ -16,14 +16,13 @@ mainApp.config(['$routeProvider',function($routeProvider){
         controller:'LoginCtrl'
 
     })
-    $routeProvider.when('/user/ads',{
-        templateUrl:"templates/loggin.html"
-    })
     $routeProvider.when('/user/ads/publish',{
-        templateUrl:"templates/publishAd.html"
+        templateUrl:"templates/publishAd.html",
+        controller:'publishAdCtrl'
     })
     $routeProvider.when('/user/editProfile',{
-        templateUrl:"templates/editProfile.html"
+        templateUrl:"templates/editProfile.html",
+        controller:'editProfileCtrl'
     })
     $routeProvider.when('/logout',{
         controller:'LogoutCtrl'

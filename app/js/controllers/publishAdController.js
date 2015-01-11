@@ -1,0 +1,12 @@
+mainApp.controller("publishAdCtrl",['townData','$scope','categoryData','adsData',function(townData,$scope,categoryData,adsData){
+        townData.getAllTowns(function(resp){
+            $scope.townsData=resp;
+        }),
+        categoryData.getAllCategory(function(resp){
+            $scope.categoryData=resp;
+        }),
+        $scope.publishAd=function(ad){
+            console.log(ad);
+            adsData.createNewAd(ad);
+        }
+}])

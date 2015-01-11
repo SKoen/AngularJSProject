@@ -2,25 +2,25 @@
 <row>
 
     <form class="form-horizontal">
-
+        <legend>Publish Ad</legend>
         <fieldset>
             <div class="col-md-10">
                 <div class="form-group">
                     <label for="tittleName" class="col-lg-2 control-label">Tittle</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="tittleName" placeholder="Tittle">
+                        <input type="text" class="form-control" id="tittleName" placeholder="Tittle" ng-model="model.Title">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+                    <label for="textArea" class="col-lg-2 control-label">Text</label>
                     <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="textArea"></textarea>
+                        <textarea class="form-control" rows="3" id="textArea" ng-model="model.Text"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="imgUrl" class="col-lg-2 control-label">Image</label>
                     <div class="col-lg-10">
-                    <input type="text" class="form-control" id="imgUrl" placeholder="imgUrl">
+                    <input type="file" class="form-control" id="imgUrl" placeholder="imgUrl" ng-model="model.img">
                     </div>
                 </div>
                 </div>
@@ -31,16 +31,16 @@
                 <div class="form-group">
                     <label for="categoryName" class="col-lg-2 control-label">Category</label>
                     <div class="col-lg-10">
-                        <select class="form-control" id="categoryName">
-                            <option ng-repeat="category in categoryData">{{category.name}}</option>
+                        <select class="form-control" id="categoryName" ng-model="model.categoryId">
+                            <option ng-repeat="category in categoryData" value={{category.id}}>{{category.name}}</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="townName" class="col-lg-2 control-label">Town</label>
                     <div class="col-lg-10">
-                        <select class="form-control" id="townName">
-                            <option ng-repeat="town in townsData">{{town.name}}</option>
+                        <select class="form-control" id="townName" ng-model="model.townId">
+                            <option ng-repeat="town in townsData" value={{town.id}}>{{town.name}}</option>
                         </select>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
 </row>
 <div class="form-group">
     <div class="col-lg-12 col-lg-offset-2">
-        <button type="submit" class="btn btn-info col-lg-offset-1 btn-lg">Edit</button>
-        <button class="btn btn-info col-lg-offset-1 btn-lg">Cancel</button>
+        <button type="submit" class="btn btn-info col-lg-offset-1 btn-lg" ng-click="publishAd(model)">Publish</button>
+        <button class="btn btn-info col-lg-offset-1 btn-lg" ng-click="cancel()">Cancel</button>
     </div>
 </div>

@@ -1,4 +1,4 @@
-mainApp.controller("HomeController",['townData','$scope','adsData','categoryData',function(townData,$scope,adsData,categoryData){
+mainApp.controller("HomeController",['townData','filterAds','$scope','adsData','categoryData',function(townData,filterAds,$scope,adsData,categoryData){
     $scope.hideCategories=true;
     $scope.ready=false;
     $scope.hideTowns=true;
@@ -6,11 +6,13 @@ mainApp.controller("HomeController",['townData','$scope','adsData','categoryData
     var clickedTown="";
     $scope.clickCategory=function (catId){
         clickedCategory=catId;
-        console.log(catId);
+     //   console.log(catId);
+        filterAds.filterByCategoryAndTown(clickedCategory,clickedTown);
     }
     $scope.clickTown=function (townId){
         clickedTown=townId;
-        console.log(townId);
+        //console.log(townId);
+        filterAds.filterByCategoryAndTown(clickedCategory,clickedTown);
     }
     adsData.getAllAds(function(resp){
         $scope.adsData=resp;
