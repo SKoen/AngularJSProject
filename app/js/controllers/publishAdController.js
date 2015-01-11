@@ -6,7 +6,6 @@ mainApp.controller("publishAdCtrl",['townData','$scope','categoryData','adsData'
             $scope.categoryData=resp;
         }),
         $scope.publishAd=function(ad){
-            console.log(ad);
             adsData.createNewAd(ad);
         }
 }])
