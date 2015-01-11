@@ -1,36 +1,36 @@
 <ng-include src="'templates/header.html'"></ng-include>
-<form class="form-horizontal container">
+<form name="user" class="form-horizontal container">
     <fieldset class="col-md-5">
         <legend>Edit Profile</legend>
         <div class="form-group">
             <label for="inputName" class="col-lg-2 control-label">Name</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputName" placeholder="Name" value={{currentUser.name}}>
+                <input type="text" class="form-control" id="inputName" placeholder="Name" value={{currentUser.name}} ng-model="user.Name">
             </div>
         </div>
         <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputEmail" placeholder="Em@il" value={{currentUser.email}}>
+                <input type="text" class="form-control" id="inputEmail" placeholder="Em@il" value={{currentUser.email}} ng-model="user.Email">
             </div>
         </div>
         <div class="form-group">
             <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputPhone" placeholder="Phone" value={{currentUser.phoneNumber}}>
+                <input type="text" class="form-control" id="inputPhone" placeholder="Phone" value={{currentUser.phoneNumber}} ng-model="user.PhoneNumber">
             </div>
         </div>
         <div class="form-group">
             <label for="inputTown" class="col-lg-2 control-label">Town</label>
             <div class="col-lg-10">
-                <select class="form-control" id="inputTown">
-                    <option ng-repeat="town in townsData">{{town.name}}</option>
+                <select class="form-control" id="inputTown"  ng-model="user.townId">
+                    <option ng-repeat="town in townsData" value={{town.id}}>{{town.name}}</option>
                 </select>
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-3">
-                <button type="submit" class="btn btn-success col-lg-offset-1">Update</button>
+                <button type="submit" class="btn btn-success col-lg-offset-1" ng-click="updateProfile(user)">Update</button>
                 <button class="btn btn-danger col-lg-offset-1">Cancel</button>
             </div>
         </div>
@@ -40,24 +40,24 @@
         <div class="form-group">
             <label for="oldPassword" class="col-lg-3 control-label">Old Password</label>
             <div class="col-lg-9">
-                <input type="password" class="form-control" id="oldPassword" placeholder="Password">
+                <input type="password" class="form-control" id="oldPassword" placeholder="Password" ng-model="userPass.oldPassword">
             </div>
         </div>
         <div class="form-group">
             <label for="newPassword" class="col-lg-3 control-label">New password</label>
             <div class="col-lg-9">
-                <input type="password" class="form-control" id="newPassword" placeholder="Password">
+                <input type="password" class="form-control" id="newPassword" placeholder="Password" ng-model="userPass.newPassword">
             </div>
         </div>
         <div class="form-group">
             <label for="ConfirmPassword" class="col-lg-3 control-label">Confirm new password</label>
             <div class="col-lg-9">
-                <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password">
+                <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" ng-model="userPass.confirmPassword">
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-3">
-                <button type="submit" class="btn btn-success  col-lg-offset-1">Change Password</button>
+                <button type="submit" class="btn btn-success  col-lg-offset-1" ng-click="changePassword(userPass)">Change Password</button>
                 <button class="btn btn-danger  col-lg-offset-4">Cancel</button>
             </div>
         </div>

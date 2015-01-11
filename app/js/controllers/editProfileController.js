@@ -1,5 +1,14 @@
-mainApp.controller("editProfileCtrl",['$scope','mainUrl','userProfile',function($scope,mainUrl,userProfile){
+mainApp.controller("editProfileCtrl",['$scope','mainUrl','townData','userProfile',function($scope,mainUrl,townData,userProfile){
     userProfile.getUserData(function(resp){
         $scope.currentUser=resp;
-    })
+    }),
+    townData.getAllTowns(function(resp){
+        $scope.townsData=resp;
+    }),
+    $scope.updateProfile=function(user){
+        userProfile.editUserData(user);
+    },
+    $scope.changePassword=function(user){
+        userProfile.changePass(user);
+    }
 }])
